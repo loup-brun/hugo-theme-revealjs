@@ -18,6 +18,10 @@
   {{ if .Params.transition_speed }}
     data-transition="{{ .Params.transition_speed }}"
   {{ end }}
+
+  {{ if .Params.state }}
+    data-state="{{ .Params.state }}"
+  {{ end }}
 >
   {{ if .Title }}
     {{ if not .Params.hide_title }}

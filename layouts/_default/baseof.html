@@ -8,10 +8,13 @@
 
   <title>{{ .Site.Title }}</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css" integrity="sha256-ol2N5Xr80jdDqxK0lte3orKGb9Ja3sOnpAUV7TTADmg=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ relURL "reveal.js/css/reveal.min.css" }}" />
+  <link rel="icon" type="image/png" href="{{ relURL "favicon.png" }}" />
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css" integrity="sha256-ol2N5Xr80jdDqxK0lte3orKGb9Ja3sOnpAUV7TTADmg=" crossorigin="anonymous" />-->
 
-  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/{{ default "night" .Site.Params.reveal_theme }}.min.css' />
-  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{ default "monokai-sublime" .Site.Params.hljs_theme }}.min.css' />
+  <link rel="stylesheet" href="reveal.js/css/theme/{{ default "night" .Site.Params.reveal_theme }}.css" />
+<!--  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/{{ default "night" .Site.Params.reveal_theme }}.min.css' />-->
+  <link rel="stylesheet" href="{{ relURL "reveal.js/lib/css/monokai-sublime.css" }}"/>
 
   {{ if fileExists "static/index.css" }}
     <link rel="stylesheet" href='{{ relURL "index.css" }}' />
@@ -21,9 +24,11 @@
 
 {{ block "main" . }}{{ end }}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js" integrity="sha256-ixSKHrWAL2k0mqVSRju9+to2/uZSEK9+kJRfdNBolG8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.min.js" integrity="sha256-r7x+4iKcDauI3cOr35pRCf1DsmoaRLuURBgs2yU7u64=" crossorigin="anonymous"></script>
+<script src="{{ relURL "reveal.js/js/reveal.min.js" }}"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js" integrity="sha256-ixSKHrWAL2k0mqVSRju9+to2/uZSEK9+kJRfdNBolG8=" crossorigin="anonymous"></script>-->
+<script src="{{ "reveal.js/plugin/highlight/highlight.js" }}"></script>
+<script src="{{ "reveal.js/plugin/zoom-js/zoom.js" }}"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.min.js" integrity="sha256-r7x+4iKcDauI3cOr35pRCf1DsmoaRLuURBgs2yU7u64=" crossorigin="anonymous"></script>-->
 
 
 <script type="application/json" id="reveal-user-config">{{ jsonify .Site.Params.revealjs | safeJS }}</script>
