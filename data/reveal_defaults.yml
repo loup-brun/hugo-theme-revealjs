@@ -1,2 +1,5 @@
 ---
 center: true
+history: true
+controlsTutorial: true
+controlsBackArrows: visible

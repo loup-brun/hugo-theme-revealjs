@@ -10,6 +10,8 @@
 
   <link rel="stylesheet" href="{{ relURL "reveal.js/css/reveal.min.css" }}" />
   <link rel="icon" type="image/png" href="{{ relURL "favicon.png" }}" />
+  
+  <meta property="og:image" content="{{ absURL "affiche-reseaux-sociaux.png" }}" />
 <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css" integrity="sha256-ol2N5Xr80jdDqxK0lte3orKGb9Ja3sOnpAUV7TTADmg=" crossorigin="anonymous" />-->
 
   <link rel="stylesheet" href="reveal.js/css/theme/{{ default "night" .Site.Params.reveal_theme }}.css" />
@@ -30,6 +32,12 @@
 <script src="{{ "reveal.js/plugin/zoom-js/zoom.js" }}"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.min.js" integrity="sha256-r7x+4iKcDauI3cOr35pRCf1DsmoaRLuURBgs2yU7u64=" crossorigin="anonymous"></script>-->
 
+<script src="{{ "reveal.js/lib/js/espacefine.js" }}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) { 
+  espaceFine();
+});
+</script>
 
 <script type="application/json" id="reveal-user-config">{{ jsonify .Site.Params.revealjs | safeJS }}</script>
 <script type="application/json" id="reveal-default-config">{{ jsonify .Site.Data.reveal_defaults | safeJS }}</script>
